@@ -1,0 +1,5 @@
+#EXCEPTION MESSAGES
+exception.accessdenied=İlgili kaynağa erişiminiz yoktur.
+exception.filenotfound=Dosya bulunamadı!
+exception.resourcenotfound=Kaynak bulunamadı.
+exception.generalexception=Şu anda işleminizi gerçekleştiremiyoruz. Lütfen daha sonra tekrar deneyin.
