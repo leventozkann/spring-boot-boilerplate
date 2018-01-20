@@ -7,6 +7,10 @@ public class AppConstants {
 	public static final String URL_MAP_COUNTRY_READ= "/read/country";
 	
 	
+	/*PARAMETER CONSTANTS*/
+	public static final String PARAMETER_LANG= "lang";
+	
+	
 	/*CACHE NAME CONSTANTS*/
 	public static final String CACHE_NAME_COUNTRY_LIST= "country-list";
 	

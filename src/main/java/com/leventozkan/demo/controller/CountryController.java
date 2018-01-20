@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.leventozkan.demo.constants.AppConstants;
 import com.leventozkan.demo.domain.Country;
 import com.leventozkan.demo.service.CountryService;
+import com.leventozkan.demo.service.FastCountryService;
 
 @RestController
 public class CountryController {
@@ -20,11 +21,15 @@ public class CountryController {
 	@Autowired
 	CountryService countryService;
 	
-	@RequestMapping(value = AppConstants.URL_MAP_COUNTRY_LIST, method = RequestMethod.GET)
-	public ResponseEntity<List<Country>> getAllCountries() {
-		
-		List<Country> countryList =  countryService.getAllCountries();
+	@Autowired
+	FastCountryService fastCountryService;
 	
+	@RequestMapping(value = AppConstants.URL_MAP_COUNTRY_LIST, method = RequestMethod.GET)
+	public ResponseEntity<List<Country>> getAllCountries()  {
+		
+	   // List<Country> countryList =  countryService.getAllCountries();
+	   // List<Country> countryList =  fastCountryService.getSomeCountries();
+	    List<Country> countryList =  fastCountryService.getAnotherSomeCountries();
 		return new ResponseEntity<List<Country>>(countryList, HttpStatus.OK);
 	}
 	
@@ -32,7 +37,6 @@ public class CountryController {
 	public ResponseEntity<Country> getCountryByName(@PathVariable String countryName) {
 		
 		Country country =  countryService.readCountry(countryName);
-		
 		return new ResponseEntity<Country>(country, HttpStatus.OK);
 	}
 	
